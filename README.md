@@ -1,4 +1,4 @@
-#React Benchmarking
+# React Benchmarking
 
 The benchmarking in this demo is to test applications that have a tree like structure. We are using a very basic list structure for our testing:
 
