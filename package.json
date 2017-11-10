@@ -1,0 +1,51 @@
+{
+  "name": "redux-perf",
+  "version": "1.0.0",
+  "description": "Sample project demonstrating redux performance bottlenecks",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server --open",
+    "start-functional": "webpack-dev-server --open --entry=./src/functional/app.js",
+    "start-purecomponent": "webpack-dev-server --open --entry=./src/purecomponent/app.js",
+    "start-component": "webpack-dev-server --open --entry=./src/component/app.js",
+    "start-flattened": "webpack-dev-server --open --entry=./src/flattened/app.js",
+    "run-benchmarks": "karma start"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "html-webpack-plugin": "^2.29.0",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "argv": "^0.0.2",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "karma": "^1.7.1",
+    "karma-benchmark": "^0.7.1",
+    "karma-benchmark-reporter": "^0.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-es6-shim": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.5",
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1",
+    "why-did-you-update": "^0.0.8"
+  }
+}
