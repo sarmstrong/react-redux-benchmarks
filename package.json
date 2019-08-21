@@ -6,12 +6,10 @@
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --open",
-    "start-functional": "webpack-dev-server --open --entry=./src/functional/app.js",
-    "start-purecomponent": "webpack-dev-server --open --entry=./src/purecomponent/app.js",
-    "start-component": "webpack-dev-server --open --entry=./src/component/app.js",
     "start-flattened": "webpack-dev-server --open --entry=./src/flattened/app.js",
+    "start-context": "webpack-dev-server --open --entry=./src/use-context-no-opt/app.js",
+    "start-context-opt": "webpack-dev-server --open --entry=./src/use-context-with-opt/app.js",
     "run-benchmarks": "karma start"
-
   },
   "author": "",
   "license": "ISC",
@@ -41,8 +39,8 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.5",
     "lodash": "^4.17.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "reselect": "^3.0.1",

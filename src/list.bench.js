@@ -1,43 +1,29 @@
-import functionalStore from './functional/app';
-import componentStore from './component/app';
-import pureStore from './purecomponent/app';
+
 import flattenedStore from './flattened/app';
-import flattenedFunctionalStore from './flattened-functional/app';
-import { updateSubList } from './shared/actions';
+import contextProvider from './use-context-no-opt/app';
+import contextProviderOptimized from './use-context-with-opt/app';
 import { updateListItem } from './shared/flattenedActions';
 
 suite('No Text Change', () => {
-    benchmark('Functional - Update sub list', () => {
-        functionalStore.dispatch(updateSubList(4, 1));
-    });
-    benchmark('Component - Update sub list', () => {
-        componentStore.dispatch(updateSubList(4, 1));
-    });
-    benchmark('Pure Component - Update sub list', () => {
-        pureStore.dispatch(updateSubList(4, 1));
-    });
-    benchmark('Flattened Functional Component - Update sub list', () => {
-        flattenedFunctionalStore.dispatch(updateListItem(4));
-    });
     benchmark('Flattened Pure Component - Update sub list', () => {
         flattenedStore.dispatch(updateListItem(4));
+    });
+    benchmark('Use Context - No Optimization - Update sub list', () => {
+        contextProvider.updateItemsNoChange();
+    });
+    benchmark('Use Context - Optimized - Update sub list', () => {
+        contextProviderOptimized.updateItemsNoChange();
     });
 });
 
 suite('With Change', () => {
-    benchmark('Functional - Update sub list', () => {
-        functionalStore.dispatch(updateSubList(4, 1, `Hello World ${Math.random()}`));
-    });
-    benchmark('Component - Update sub list', () => {
-        componentStore.dispatch(updateSubList(4, 1, `Hello World ${Math.random()}`));
-    });
-    benchmark('Pure Component - Update sub list', () => {
-        pureStore.dispatch(updateSubList(4, 1, `Hello World ${Math.random()}`));
-    });
-    benchmark('Flattened Functional Component - Update sub list', () => {
-        flattenedFunctionalStore.dispatch(updateListItem(4, `Hello World ${Math.random()}`));
-    });
     benchmark('Flattened Pure Component - Update sub list', () => {
         flattenedStore.dispatch(updateListItem(4, `Hello World ${Math.random()}`));
+    });
+    benchmark('Use Context - No Optimization - Update sub list', () => {
+        contextProvider.updateItemsWithChange();
+    });
+    benchmark('Use Context - Optimized - Update sub list', () => {
+        contextProviderOptimized.updateItemsWithChange();
     });
 });

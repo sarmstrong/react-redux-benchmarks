@@ -19,6 +19,8 @@ ReactDOM.render(
     </Provider>, div,
 );
 
-store.dispatch(updateListItem(4));
+setInterval(() => {
+    store.dispatch(updateListItem(4));
+}, 300);
 
 export default store;
