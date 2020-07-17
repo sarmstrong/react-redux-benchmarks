@@ -40,7 +40,7 @@
     "karma-es6-shim": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
